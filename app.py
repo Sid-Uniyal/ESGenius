@@ -14,6 +14,7 @@ st.subheader("Here are some key points:")
 st.markdown("- Point 1")
 st.markdown("- Point 2")
 st.markdown("- Point 3")
+st.button("Submit")
 
 # Display an image
 st.image("image.jpg", caption="Image Caption", use_column_width=True)
