@@ -1,41 +1,33 @@
 import streamlit as st
-import pickle
+
+# Set the page title
+st.title("My Streamlit App")
+
+# Add a heading
+st.header("Welcome to my app!")
+
+# Add some text
+st.write("This is a Streamlit app example.")
+
+# Add more content
+st.subheader("Here are some key points:")
+st.markdown("- Point 1")
+st.markdown("- Point 2")
+st.markdown("- Point 3")
+
+# Display an image
+st.image("image.jpg", caption="Image Caption", use_column_width=True)
+
+# Show a dataframe
 import pandas as pd
-#import plotly.graph_objects as go
-import pickle
-import numpy as np
+data = {'Name': ['John', 'Alice', 'Bob'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+st.dataframe(df)
 
-def main():
-    #print('Hello World, Streamlit app')
-    st.set_page_config(
-        page_title= "Cancer Predictor",
-        page_icon=":female-doctor:",
-        layout = "wide",
-        initial_sidebar_state="expanded"
-    )
-    #st.write("Hello World")
+# Render a plot
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3, 4, 5], [10, 20, 30, 40, 50])
+st.pyplot(plt)
 
-    # with open("assets/style.css") as f:
-    #     st.markdown("<stlye>{}</style>".format(f.read()), unsafe_allow_html=True)
-
-
-    input_data = add_sidebar()
-    #st.write(input_data) # just to test if it actually captures the data
-
-    with st.container():
-        st.title("Cancer Predictor")
-        st.write("Connect this application to your simulation app to help diagnose the cancer form the tissue sample")
-
-    col1, col2 = st.columns([4,1]) # sets the ratio of the columns
-
-    with col1:
-        #st.write("this is column 1")
-        radar_chart = get_radar_chart(input_data)
-        st.plotly_chart(radar_chart)
-    with col2:
-        #st.write("this is column 2")
-        add_predictions(input_data)
-
-
-if __name__ =='__main__':
-    main()
+# Add a footer
+st.footer("Thank you for using my app!")
