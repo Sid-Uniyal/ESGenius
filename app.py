@@ -26,7 +26,7 @@ def simulate_processing():
 
 # Add some text
 st.write("ESGenius app will give you the methods to control your organizations carbon emissions. Please click the Generate button below to proceed")
-st.button("Generate")
+#st.button("Generate")
 if st.button("Generate"):
     # Display a spinner while processing
     with st.spinner("Processing..."):
