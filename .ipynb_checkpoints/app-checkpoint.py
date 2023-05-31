@@ -43,7 +43,7 @@ def simulate_processing():
 
     
 def Gen_AI_Core_Engine():
-    os.environ['OPENAI_API_KEY'] = "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"
+    os.environ['OPENAI_API_KEY'] = ""
     llm=OpenAI(temperature=0.0)
 
     csv_agent_1=create_csv_agent(llm, 'ESGenius/genai_fact_3.csv', verbose=True)
