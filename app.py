@@ -1,5 +1,17 @@
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url('ESGenius/esg-background.jpg');
+        background-size: cover;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Set the page title
 st.title("Welcome to ESGenius")
 
@@ -7,8 +19,8 @@ st.title("Welcome to ESGenius")
 #st.header("Welcome to my app!")
 
 # Add some text
-st.write("This is an ESGenius app, it will give you the methods to control your carbon emissions. Please click the Submit button below")
-st.button("Submit")
+st.write("This is an ESGenius app, it will give you the methods to control your carbon emissions. Please click the Generate button below")
+st.button("Generate")
 
 # Add more content
 #st.subheader("Here are some key points:")
