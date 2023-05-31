@@ -46,8 +46,8 @@ def Gen_AI_Core_Engine():
     os.environ['OPENAI_API_KEY'] = "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"
     llm=OpenAI(temperature=0.0)
 
-    csv_agent_1=create_csv_agent(llm, 'ESGenius/genai_fact_3.csv', verbose=True)
-    csv_agent_2=create_csv_agent(llm, 'ESGenius/carbon_levers_file.csv', verbose=True)
+    csv_agent_1=create_csv_agent(llm, 'genai_fact_3.csv', verbose=True)
+    csv_agent_2=create_csv_agent(llm, 'carbon_levers_file.csv', verbose=True)
 
     overall_chain = SimpleSequentialChain(chains=[csv_agent_1, csv_agent_2], verbose=True)
     response = overall_chain.run("Find the most poluuting facility. Once we have the facility, pick the most polluting category for each Source Type. Finally, based on Categories found, recommend Actions that I should take.")
