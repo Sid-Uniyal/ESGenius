@@ -1,13 +1,13 @@
 import streamlit as st
 
 # Set the page title
-st.title("My Streamlit App")
+st.title("Welcome to ESGenius")
 
 # Add a heading
-st.header("Welcome to my app!")
+#st.header("Welcome to my app!")
 
 # Add some text
-st.write("This is a Streamlit app example.")
+st.write("This is an ESGenius app, it will give you the methods to control your carbon emissions. :)")
 
 # Add more content
 st.subheader("Here are some key points:")
