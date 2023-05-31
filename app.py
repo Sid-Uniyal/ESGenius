@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.markdown(
     """
@@ -18,9 +19,19 @@ st.title("Welcome to ESGenius")
 # Add a heading
 #st.header("Welcome to my app!")
 
+# Function to simulate a long-running process
+def simulate_processing():
+    # Add a delay to simulate processing
+    time.sleep(5)
+
 # Add some text
-st.write("This is an ESGenius app, it will give you the methods to control your carbon emissions. Please click the Generate button below")
+st.write("ESGenius app will give you the methods to control your organizations carbon emissions. Please click the Generate button below to proceed")
 st.button("Generate")
+if st.button("Generate"):
+    # Display a spinner while processing
+    with st.spinner("Processing..."):
+        simulate_processing()
+        st.success("Processing completed")
 
 # Add more content
 #st.subheader("Here are some key points:")
