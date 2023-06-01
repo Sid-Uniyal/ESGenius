@@ -23,9 +23,9 @@ import re
 st.markdown(
     """
     <style>
-    .stApp {
-        background-image: url('ESGenius/esg-background.jpg');
-        background-size: cover;
+    body {
+        color: white;
+        background-color: black;
     }
     </style>
     """,
