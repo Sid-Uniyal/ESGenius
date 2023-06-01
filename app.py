@@ -17,6 +17,7 @@ from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.prompts import PromptTemplate
+from htmlTemplates import css, bot_template, user_template
 
 st.markdown(
     """
@@ -75,8 +76,8 @@ if st.button("Generate"):
         simulate_processing()
         st.success("Processing completed")
         #st.code(output, language="python")
-        st.write(output)
-        
+        #st.write(output)
+        st.write(user_template.replace("{{MSG}}", output), unsafe_allow_html=True)
 
 # Add more content
 #st.subheader("Here are some key points:")
