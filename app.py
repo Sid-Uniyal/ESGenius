@@ -25,7 +25,7 @@ import re
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-color: #50C878;
+background-color: #ECFFDC;
 opacity: 0.9;
 }
 </style>
