@@ -18,6 +18,7 @@ from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.prompts import PromptTemplate
 from htmlTemplates import css, user_template
+import re
 
 st.markdown(
     """
@@ -50,10 +51,27 @@ def Gen_AI_Core_Engine():
     csv_agent_1=create_csv_agent(llm, 'genai_fact_3.csv', verbose=True)
     csv_agent_2=create_csv_agent(llm, 'carbon_levers_file.csv', verbose=True)
 
-    overall_chain = SimpleSequentialChain(chains=[csv_agent_1, csv_agent_2], verbose=True)
-    response = overall_chain.run("Find the most poluuting facility. Once we have the facility, pick the most polluting category for each Source Type. Finally, based on Categories found, recommend Actions that I should take.")
+    #overall_chain = SimpleSequentialChain(chains=[csv_agent_1, csv_agent_2], verbose=True)
+    #response = overall_chain.run("Find the most poluuting facility. Once we have the facility, pick the most polluting category for each Source Type. Finally, based on Categories found, recommend Actions that I should take.")
+    response_1 = csv_agent_1.run("Just print the name most polluting facility based on carbon emissions and name its Source Type & all source categories")
+    text = response_1
     
-    return response
+    facility_name = re.search(r'is the (.+?) office', text).group(1)
+    # Extract source type
+    source_type = re.search(r'Source Type of (.+?) and', text).group(1)
+    # Extract source category
+    source_category = re.search(r'Source Category of (.+?)\.', text).group(1)
+    
+    input_2 = "List actions to take to alleviate emissions from {} and find the action nearest to {}".format(source_type,source_category)
+    response_2 = csv_agent_2.run(input_2)
+    
+    st.write('Facility with highest carbon emission:', facility_name)
+    st.write('Source Category:', source_category)
+    st.write('Actions to take:', response_2)
+    simulate_processing()
+    st.success("Processing completed")
+    
+    #return response
 
 #def run_python_file(file_path):
 #    result = subprocess.run(["python", file_path], capture_output=True, text=True)
@@ -72,12 +90,13 @@ if st.button("Generate"):
     # Display a spinner while processing
     with st.spinner("Processing..."):
         #output = subprocess.run(["python", "ESGenius/genai_core_engine.py"], capture_output=True, text=True)
-        output=Gen_AI_Core_Engine()
-        simulate_processing()
-        st.success("Processing completed")
+        #output=Gen_AI_Core_Engine()
+        Gen_AI_Core_Engine()
+        #simulate_processing()
+        #st.success("Processing completed")
         #st.code(output, language="python")
         #st.write(output)
-        st.write(user_template.replace("{{MSG}}", output), unsafe_allow_html=True)
+        #st.write(output) #user_template.replace("{{MSG}}", output), unsafe_allow_html=True)
 
 # Add more content
 #st.subheader("Here are some key points:")
