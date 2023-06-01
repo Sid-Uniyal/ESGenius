@@ -21,14 +21,7 @@ from htmlTemplates import css, user_template
 import re
 
 
-st.set_page_config(
-    page_title="Welcome to ESGenius",
-    page_icon=":white_square_button:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    background_color="#000000",  # Set the background color to black
-    text_color="#FFFFFF"  # Set the text color to white
-)
+
 
 # Set the page title
 st.title("Welcome to ESGenius")
