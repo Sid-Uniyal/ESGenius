@@ -20,19 +20,7 @@ from langchain.prompts import PromptTemplate
 from htmlTemplates import css, user_template
 import re
 
-'''
-st.markdown(
-    """
-    <style>
-    body {
-        color: white;
-        background-color: black;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-'''
+
 st.set_page_config(
     page_title="Welcome to ESGenius",
     page_icon=":white_square_button:",
