@@ -58,7 +58,7 @@ def Gen_AI_Core_Engine():
     
     st.write('Facility with highest carbon emission:', facility_name)
     st.write('Source Category:', source_category)
-    st.write('Actions recommended by crobon levers:', response_2)
+    st.write('Actions recommended by carbon levers:', response_2)
     simulate_processing()
     st.success("Processing completed")
     
