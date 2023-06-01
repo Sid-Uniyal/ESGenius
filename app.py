@@ -17,7 +17,7 @@ from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.prompts import PromptTemplate
-from htmlTemplates import css, bot_template, user_template
+from htmlTemplates import css, user_template
 
 st.markdown(
     """
