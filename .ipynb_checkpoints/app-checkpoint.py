@@ -21,14 +21,7 @@ from htmlTemplates import css, user_template
 import re
 
 
-st.set_page_config(
-    page_title="Welcome to ESGenius",
-    page_icon=":white_square_button:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    background_color="#000000",  # Set the background color to black
-    text_color="#FFFFFF"  # Set the text color to white
-)
+
 
 # Set the page title
 st.title("Welcome to ESGenius")
@@ -65,7 +58,7 @@ def Gen_AI_Core_Engine():
     
     st.write('Facility with highest carbon emission:', facility_name)
     st.write('Source Category:', source_category)
-    st.write('Actions to take:', response_2)
+    st.write('Actions recommended by crobon levers:', response_2)
     simulate_processing()
     st.success("Processing completed")
     
@@ -84,7 +77,7 @@ if st.button('Add Key'):
     os.environ['OPENAI_API_KEY'] = key
     st.success("Key Added!")
 
-if st.button("Generate"):
+if st.button("Generate Insights & Actions"):
     # Display a spinner while processing
     with st.spinner("Processing..."):
         #output = subprocess.run(["python", "ESGenius/genai_core_engine.py"], capture_output=True, text=True)
