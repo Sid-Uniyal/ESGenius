@@ -42,8 +42,8 @@ def simulate_processing():
     time.sleep(3)
 
     
-def Gen_AI_Core_Engine():
-    os.environ['OPENAI_API_KEY'] = "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"
+    
+def Gen_AI_Core_Engine():        
     llm=OpenAI(temperature=0.0)
 
     csv_agent_1=create_csv_agent(llm, 'genai_fact_3.csv', verbose=True)
@@ -61,6 +61,10 @@ def Gen_AI_Core_Engine():
     
 # Add some text
 st.write("ESGenius app will give you the methods to control your organizations carbon emissions. Please click the Generate button below to proceed")
+
+key = st.text_input("Please enter OpenAi key", type='password')        
+os.environ['OPENAI_API_KEY'] = key #"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"
+
 if st.button("Generate"):
     # Display a spinner while processing
     with st.spinner("Processing..."):
