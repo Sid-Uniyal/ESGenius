@@ -62,8 +62,10 @@ def Gen_AI_Core_Engine():
 # Add some text
 st.write("ESGenius app will give you the methods to control your organizations carbon emissions. Please click the Generate button below to proceed")
 
-key = st.text_input("Please enter OpenAi key", type='password')        
-os.environ['OPENAI_API_KEY'] = key #"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"
+key = st.text_input("Please enter OpenAi key", type='password')
+if st.button('Add Key'):
+    os.environ['OPENAI_API_KEY'] = key
+    st.success("Key Added!")
 
 if st.button("Generate"):
     # Display a spinner while processing
