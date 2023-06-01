@@ -22,6 +22,12 @@ import re
 
 
 
+#page_bg_img = 
+"""
+<style>
+
+</style>
+"""
 
 # Set the page title
 st.title("Welcome to ESGenius")
