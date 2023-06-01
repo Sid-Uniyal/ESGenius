@@ -22,8 +22,7 @@ import re
 
 
 
-page_bg_img = 
-"""
+page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
 background-color: #000000;
@@ -32,6 +31,8 @@ background: repeating-linear-gradient( 45deg, #f4f4f7, #f4f4f7 4.5px, #000000 4.
 }
 </style>
 """
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Set the page title
 st.title("Welcome to ESGenius")
